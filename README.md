@@ -145,9 +145,9 @@ on implicit returns. In the following method, we create a variable `name`.
 
 ## Conclusion
 
-Knowing how methods print and return values is crucial as you'll be using them
-constantly in programs both big and small. Knowing the difference between puts
-and return will help you avoid a common pitfalls.
+Knowing how methods return values is crucial as you'll be using them constantly
+in programs both big and small. Knowing the difference between puts and return
+will help you avoid a common pitfalls.
 
 Return values are how different parts of your program communicate with one
 another. You don't have to worry too much about this for now, but as you start
