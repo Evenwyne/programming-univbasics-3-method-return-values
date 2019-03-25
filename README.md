@@ -10,7 +10,8 @@
 Displaying text in the console is not the only way available to get information
 from our Ruby methods. While `puts` and `print` display information, they don't
 give a _return value_. When writing code, sometimes we'll want our methods to
-evaluate code and _return_ a value -- not just display it, or output text.
+evaluate code and _return_ a value -- not just output text, but return it to the
+the place that invoked the method.
 
 We'll cover the concept of return values in Ruby, and how this actually differs
 from `puts` and `print`commands.
@@ -25,8 +26,8 @@ A _return value_ is the data returned to the program by the execution of a
 method, the assignment of a variable, or other anything in Ruby. Everything has
 a return value!
 
-For example, try pasting these lines into IRB (make sure to include parenthesis
-around strings):
+For example, try pasting these lines into IRB (make sure to include the
+double-quotes around the strings):
 
 | Code                  | Return Value   |
 |-----------------------|----------------|
@@ -57,7 +58,9 @@ money. We know about how arguments work, but then your vending machine might do
 two things: It will make a noise saying that everything worked (beep, beep!),
 and then it gives you the soda. The soda is like the return type, but the sound
 effects that you hear when you input the item number isn't something you can
-use. `puts` works similarly: it tells you something and that's it.
+use. Similarly to the "beep beep", `puts` tells you something happened, to your
+senses (your ears) but it's not what returns back, that's the delicious, fizzy
+soda.
 
 Every method in Ruby returns a value by default. This returned value will be the
 value of the last statement.
@@ -146,8 +149,8 @@ on implicit returns. In the following method, we create a variable `name`.
 ## Conclusion
 
 Knowing how methods return values is crucial as you'll be using them constantly
-in programs both big and small. Knowing the difference between puts and return
-will help you avoid a common pitfalls.
+in programs both big and small. Knowing the difference between `puts` and
+`print`, and return values will help you avoid a common pitfalls.
 
 Return values are how different parts of your program communicate with one
 another. You don't have to worry too much about this for now, but as you start
