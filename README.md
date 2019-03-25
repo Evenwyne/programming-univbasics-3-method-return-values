@@ -7,24 +7,23 @@
 
 ## Introduction
 
-Displaying text in the console is not the only way available to get information
-from our Ruby methods. While `puts` and `print` display information, they don't
+To display content in the console we can use `puts` and `print`. However, they don't
 give a _return value_. When writing code, sometimes we'll want our methods to
-evaluate code and _return_ a value -- not just output text, but return it to the
+evaluate code and _return_ a value &mdash; not just output text, but return it to the
 the place that invoked the method.
 
 We'll cover the concept of return values in Ruby, and how this actually differs
-from `puts` and `print`commands.
+from `puts` and `print` commands.
 
-## Identify implicit return values in Ruby syntax
+## Identify Implicit Return Values in Ruby Syntax
 
-By default, Ruby doesn't display any output, however, this doesn't mean that
-nothing is happening. Methods like `puts` and `print` allow us to output text to
-the console. This is actually different from Ruby's concept of a _return value_.
+Methods like `puts` and `print` allow us to output text to the console. This is
+actually different from Ruby's concept of a _return value_.
 
 A _return value_ is the data returned to the program by the execution of a
-method, the assignment of a variable, or other anything in Ruby. Everything has
-a return value!
+method, the assignment of a variable, or, generally, the evaluation of any
+expression in Ruby. In Ruby, wherever there's an expression, there's a
+return value. Everything has a return value!
 
 For example, try pasting these lines into IRB (make sure to include the
 double-quotes around the strings):
@@ -45,10 +44,15 @@ which in these examples, may have been a string declaration, variable
 declaration, or a calculation.
 
 However, when we use `puts` and `print` methods in IRB, you can see the output
-on the screen and a line displayed after it that says `=> nil`. This is because
+on the screen _and_ a line displayed after it that says `=> nil`. This is because
 `puts` and `print` may print the value you want, but instead of _returning_ that
 value, they display the text but return `nil`. This means that the method has
 not returned a value.
+
+Some people think it's strange that `puts` and its friends don't have a return
+value. But what would that be? That the human at the end of the screen saw the
+value and paid attention to it? It kind of makes sense, from a certain point of
+view.
 
 ## Recognize Implicit Return Values in Ruby Syntax
 
@@ -115,6 +119,9 @@ end
 The method would instead print "Guy Fieri" and return `nil`. This is because the
 last line that was evaluated was `puts ...` and the return value of a `puts`, as
 seen in the table above, is always `nil`.
+
+**PUZZLE**: Keep in mind that `p` _does_ return what it output. How would that
+change these return values?
 
 ## Recognize the Explicit `return` Keyword
 
