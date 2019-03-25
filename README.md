@@ -38,16 +38,15 @@ double-quotes around the strings):
 | `print "hello world"` | `nil`          |
 
 
-As you may notice, Ruby still returns a value after evaluation, even though it
-isn’t explicitly called. It returns the value of the last executed instruction,
-which in these examples, may have been a string declaration, variable
-declaration, or a calculation.
+Ruby still returns a value after evaluation, even though it we didn't "do"
+anything. It returns the value of the last executed instruction,
+which, in these examples, may have been a string declaration, variable
+declaration, a calculation, or a call to `puts`.
 
 However, when we use `puts` and `print` methods in IRB, you can see the output
 on the screen _and_ a line displayed after it that says `=> nil`. This is because
-`puts` and `print` may print the value you want, but instead of _returning_ that
-value, they display the text but return `nil`. This means that the method has
-not returned a value.
+`puts` and `print`  print the value you want, but instead of _returning_ that
+value, they return `nil`. This means that the method has not returned a value.
 
 Some people think it's strange that `puts` and its friends don't have a return
 value. But what would that be? That the human at the end of the screen saw the
