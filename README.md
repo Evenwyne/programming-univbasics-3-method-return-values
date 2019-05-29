@@ -33,7 +33,7 @@ variable. All you have to do is put an expression right before the `end` and
 ruby will evaluate it. In other programming languages like JavaScript ***you
 must*** explicitly say:
 
-```javascript
+```JavaScript
 {
  ...
  return 1 + 2
