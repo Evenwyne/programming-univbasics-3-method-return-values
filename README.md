@@ -109,12 +109,22 @@ be seen!
 
 The explicit use of the `return` keyword is generally avoided by many Rubyists,
 but there are instances where you might want to use `return` instead of relying
-on implicit returns. In the following method, we create a variable `name`.
+on implicit returns. What if you decided that an slow calculation could be avoided
+if a simple condition were true. This pattern is known as a "guard clause" if you
+want to be very stylish. It helps you avoid an `if...else...end` conditional.
 
-"Interrupting" explicit returns are often used to shortcut long processes,
-particularly when working with large collections of data. To see the value of
-this, we'll need to learn more about collection data types, but that's the
-subject of our next module.
+```ruby
+def get_stock_market_data(date)
+  return nil if is_a_weekend?(date)
+  # Imagine an expensive, slow calculation hereafter
+end
+```
+
+To see the value of this, we'll need to learn more about collection data types,
+but that's the subject of our next module. Additionally, sometimes the return
+values of some of the basic Ruby methods might return something that is unpredictable.
+Using `return` _explicitly_ lets you make sure your method always returns what
+_you_ need.
 
 ## Conclusion
 
