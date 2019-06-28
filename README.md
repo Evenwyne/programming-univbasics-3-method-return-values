@@ -130,7 +130,7 @@ _you_ need.
 
 Knowing how methods return values is crucial as you'll be using them constantly
 in programs both big and small. Knowing the difference between `puts` and
-`print`, and return values will help you avoid a common pitfalls.
+`print`, and return values will help you avoid a common pitfall.
 
 Return values are how different parts of your program communicate with one
 another. You don't have to worry too much about this for now, but as you start
