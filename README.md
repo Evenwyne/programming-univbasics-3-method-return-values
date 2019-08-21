@@ -8,8 +8,7 @@
 ## Introduction
 
 As you learned when studying _expressions_, Ruby returns a value when it
-_evaluates_ an _expression_. This is called, suitably, the return value of an
-expression.
+_evaluates_ an _expression_. This is called the return value of an expression.
 
 _Methods_ also have return values. Let's study how they work.
 
@@ -30,19 +29,10 @@ a_method(1,2) #=> 3
 
 In the _implementation_, we didn't have to assign the return value to a
 variable. All you have to do is put an expression right before the `end` and
-ruby will evaluate it. In other programming languages like JavaScript ***you
-must*** explicitly say:
-
-```JavaScript
-{
- ...
- return 1 + 2
-}
-```
-
-But Ruby likes for you to be able to type less and realizes that in most
-methods there's a return value. So you don't have to type the word `return`.
-Yay!
+ruby will evaluate it. In other programming languages, like JavaScript, ***you
+must*** explicitly assign a return value. But Ruby likes for you to be able to
+type less and realizes that in most methods there's a return value. So you don't
+have to type the word `return`.
 
 Be very careful. Recall that the return value of `puts` and `print` is `nil`.
 
@@ -59,9 +49,8 @@ end
 a_method(2,3) #=> nil
 ```
 
-It's very easy to see the error here, especially if you pay attention to the
-return values of your expressions. The return value of `puts` is always `nil`!
-
+If you pay attention to the return values of your expressions, you will see the
+error here. The return value of `puts` is always `nil`!
 
 | Code                  | Return Value   |
 |-----------------------|----------------|
@@ -73,17 +62,17 @@ return values of your expressions. The return value of `puts` is always `nil`!
 | `print "hello world"` | `nil`          |
 
 > **Moment for Meta-Learning**: If these return values are surprising or don't
-> make sense, test things out in IRB and / or review lessons in Programming as
+> make sense, test things out in IRB and/or review lessons in Programming as
 > Conversation Part 1.
 
 As you might recall from Programming as Conversation 2: `p` prints _as well as
-returns the input_. That might be the right tool, depending on your situation.
+returns the input_. Depending on your situation, that might be the right tool.
 
 ## Recognize the Explicit `return` Keyword
 
-Speaking of _explicit_ return like in JavaScript (and Java, and Python for that
-matter!) Ruby _does_ have an explicit return command. Rubyists typically use it
-to exit early from a method with a specific return value.
+Speaking of _explicit_ return, like in JavaScript (and other languages such as
+Java and Python), Ruby _does_ have an explicit return command. Rubyists
+typically use it to exit early from a method with a specific return value.
 
 Let's take a look:
 
@@ -98,7 +87,7 @@ end
 What do you expect the return value of the above method to be? Using IRB, copy
 and paste the above method and call it.
 
-You may have expected the return value to be "Guy Fieri". His name is the last
+You may have expected the return value to be "Guy Fieri." His name is the last
 line of the method. *However*, the return value of the above method is actually
 `=> Martha Stewart`!
 
@@ -141,6 +130,3 @@ for those `nil`s!
 ## Resources
 
 * ["Understanding The Differences Between Puts, Print & P"](https://www.rubyguides.com/2018/10/puts-vs-print/)
-
-
-
