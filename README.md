@@ -79,7 +79,7 @@ that might be the right tool to avoid this "surprise."
 
 ## Recognize the Explicit `return` Keyword
 
-While  JavaScript, Java and Python require _explicit return_, , Ruby _does not_.
+While  JavaScript, Java, and Python require _explicit return_, Ruby _does not_.
 Given that, why is there a `return` keyword at all? Rubyists typically use it to
 exit early from a method.
 
