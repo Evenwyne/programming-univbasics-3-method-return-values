@@ -24,19 +24,28 @@ def a_method(a, b)
   a + b
 end
 
-a_method(1,2) #=> 3
+a_method(1,2) #=> 3 (the return value of a + b when a is set to 1 and b is set to 2)
 ```
 
-In the _implementation_, we didn't have to assign the return value to a
-variable. All you have to do is put an expression right before the `end` and
-ruby will evaluate it. In other programming languages, like JavaScript, ***you
-must*** explicitly assign a return value. But Ruby likes for you to be able to
-type less and realizes that in most methods there's a return value. So you don't
-have to type the word `return`.
+As opposed to _implicit return_ there is _explicit return_. If Ruby required
+_explicit return_, the previous method would look like:
 
-Be very careful. Recall that the return value of `puts` and `print` is `nil`.
+```ruby
+def a_method(a, b)
+  puts "hi"
+  return a + b
+end
 
-***A VERY COMMON BUG FOR NEW RUBYISTS IS THE FOLLOWING:***
+a_method(1,2) #=> 3 (the return value of a + b when a is set to 1 and b is set to 2)
+```
+
+In the _implementation_, we don't have to use the `return` keyword for the
+result of the final expression to be passed back.
+
+> **DANGER!** Recall that the return value of `puts` and `print` is `nil`.
+> Because of this, sometimes you'll "see" what you expect to return
+> thanks to `puts`, **but** the method _actually_ returns `nil` because
+> `puts` returns `nil`!
 
 ```ruby
 def a_method(a,b)
@@ -65,20 +74,19 @@ error here. The return value of `puts` is always `nil`!
 > make sense, test things out in IRB and/or review lessons in Programming as
 > Conversation Part 1.
 
-As you might recall from Programming as Conversation 2: `p` prints _as well as
-returns the input_. Depending on your situation, that might be the right tool.
+The `p` method prints _as well as returns the input_. Depending on your code,
+that might be the right tool to avoid this "surprise."
 
 ## Recognize the Explicit `return` Keyword
 
-Speaking of _explicit_ return, like in JavaScript (and other languages such as
-Java and Python), Ruby _does_ have an explicit return command. Rubyists
-typically use it to exit early from a method with a specific return value.
+While  JavaScript, Java and Python require _explicit return_, , Ruby _does not_.
+Given that, why is there a `return` keyword at all? Rubyists typically use it to
+exit early from a method.
 
 Let's take a look:
 
 ```ruby
 def stylish_chef
-  best_hairstyle = "Guy Fieri"
   return "Martha Stewart"
   "Guy Fieri"
 end
@@ -88,19 +96,17 @@ What do you expect the return value of the above method to be? Using IRB, copy
 and paste the above method and call it.
 
 You may have expected the return value to be "Guy Fieri." His name is the last
-line of the method. *However*, the return value of the above method is actually
+line of the method. *However*, the return value of the method is actually
 `=> Martha Stewart`!
 
-The `return` keyword will disrupt the execution of your method. If you employ
+The `return` keyword will "short-circuit" the execution of your method. If you employ
 it, your method will return whatever you have explicitly told it to (in this
-case, `"Martha Stewart"`), and then stop the remainder of the lines won't even
-be seen!
+case, `"Martha Stewart"`) ***and then skip over the remaining code in the method***.
 
-The explicit use of the `return` keyword is generally avoided by many Rubyists,
-but there are instances where you might want to use `return` instead of relying
-on implicit returns. What if you decided that an slow calculation could be avoided
-if a simple condition were true. This pattern is known as a "guard clause" if you
-want to be very stylish. It helps you avoid an `if...else...end` conditional.
+Explicit return is often used to avoid slow or costly calculations. For example,
+updating all the data about the NYSE stock market is very computationally demanding.
+In the method that starts doing such an update, you might want to "guard" against
+doing that work by testing whether or not it's the weekend (when the NYSE is closed).
 
 ```ruby
 def get_stock_market_data(date)
@@ -109,15 +115,9 @@ def get_stock_market_data(date)
 end
 ```
 
-To see the value of this, we'll need to learn more about collection data types,
-but that's the subject of our next module. Additionally, sometimes the return
-values of some of the basic Ruby methods might return something that is unpredictable.
-Using `return` _explicitly_ lets you make sure your method always returns what
-_you_ need.
-
 ## Conclusion
 
-Knowing how methods return values is crucial as you'll be using them constantly
+Knowing how methods return values is crucial since you'll be using them constantly
 in programs both big and small. Knowing the difference between `puts` and
 `print`, and return values will help you avoid a common pitfall.
 
