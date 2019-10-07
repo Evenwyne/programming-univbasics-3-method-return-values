@@ -109,7 +109,7 @@ be seen!
 
 The explicit use of the `return` keyword is generally avoided by many Rubyists,
 but there are instances where you might want to use `return` instead of relying
-on implicit returns. What if you decided that an slow calculation could be avoided
+on implicit returns. What if you decided that a slow calculation could be avoided
 if a simple condition were true. This pattern is known as a "guard clause" if you
 want to be very stylish. It helps you avoid an `if...else...end` conditional.
 
