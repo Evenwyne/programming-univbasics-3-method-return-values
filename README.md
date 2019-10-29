@@ -56,11 +56,39 @@ def a_method(a,b)
   puts "I got #{sum}"
 end
 
-a_method(2,3) #=> nil
+a_method(2,3) #=> nil (<==== Surprising?!)
+
+
+# Prints:
+# I got 2
+# I got 3
+# I got 5
 ```
 
 It's very easy to see the error here, especially if you pay attention to the
 return values of your expressions. The return value of `puts` is always `nil`!
+Because Ruby methods always "return" the return value of the last expression (
+or whatever you _explicitly_ return with the `return` keyword),
+this method, which is returning a sum, ***actually returns `nil`***.
+
+To avoid this bug, our code would have to look like:
+
+```ruby
+def a_method(a,b)
+  puts "I got #{a}"
+  puts "I got #{b}"
+  sum = a + b
+  puts "I got #{sum}"
+  sum
+end
+
+a_method(2,3) #=> 5 (<=== What we expect)
+
+# Prints:
+# I got 2
+# I got 3
+# I got 5
+```
 
 
 | Code                  | Return Value   |
