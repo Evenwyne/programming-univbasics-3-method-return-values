@@ -90,6 +90,11 @@ a_method(2,3) #=> 5 (<=== What we expect)
 # I got 5
 ```
 
+It flies against millennia of human evolution, but what you see
+is not always what is being _returned_. Put another way:
+***Seeing something printed on the screen by a method is no guarantee
+that it is the return value of that method.***
+
 
 | Code                  | Return Value   |
 |-----------------------|----------------|
