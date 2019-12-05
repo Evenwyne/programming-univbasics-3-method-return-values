@@ -55,7 +55,13 @@ def a_method(a,b)
   puts "I got #{sum}"
 end
 
-a_method(2,3) #=> nil
+a_method(2,3) #=> nil (<==== Surprising?!)
+
+
+# Prints:
+# I got 2
+# I got 3
+# I got 5
 ```
 
 If you pay attention to the return values of your expressions, you will see the
